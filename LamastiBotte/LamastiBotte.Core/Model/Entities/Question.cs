@@ -8,8 +8,8 @@ namespace LamastiBotte.Core.Model.Entities
 {
     public class Question
     {
-        public uint id { get; set; };
-        public string question { get; set; };
-
+        public uint Id { get; set; }
+        public string QuestionString { get; set; }
+        public List<Reponse> reponses = new List<Reponse>();
     }
 }
