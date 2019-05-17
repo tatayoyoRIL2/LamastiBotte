@@ -7,6 +7,7 @@ L’application apprendra de nouvelles réponses au fur à mesure des discussion
 questions/réponses devra être persistante, c’est à dire que la dernière session de questions/réponses
 doit pouvoir être rechargée à chaque démarrage de l’application.
 
+'''bash
 .
 └───LamastiBotte
     ├───LamastiBotte.Core
@@ -24,3 +25,4 @@ doit pouvoir être rechargée à chaque démarrage de l’application.
         └───obj
             └───Debug
                 └───netcoreapp2.1
+'''

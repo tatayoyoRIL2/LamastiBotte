@@ -4,4 +4,8 @@
 /obj/
 LamastiBotte/\.vs/
 
+LamastiBotte/LamastiBotte\.Core/obj/
+LamastiBotte/LamastiBotte\.Core/bin/
+
 LamastiBotte/LamastiBotte\.Core\.Test/obj/
+LamastiBotte/LamastiBotte\.Core\.Test/bin/
