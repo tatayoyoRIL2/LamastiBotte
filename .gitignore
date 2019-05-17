@@ -19,3 +19,4 @@ bld/
 
 # Fichier de configurtion utiliateur
 *.user
+/LamastiBotte/LamastiBotte.DataBase
