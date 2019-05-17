@@ -17,7 +17,6 @@ namespace LamastiBotte.Core.Service
             /// <summary>
             /// Math avec un regex les caractères "^0-9a-zA-Z "
             /// </summary>
-            string pattern = "";
             string outputMessage = Regex.Replace(inputMessage, @"[^0-9a-zA-Z ]+", "");
 
             /// <summary>
