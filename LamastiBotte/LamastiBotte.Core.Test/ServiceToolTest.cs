@@ -1,3 +1,4 @@
+using LamastiBotte.Core.Service;
 using NUnit.Framework;
 
 namespace Tests
@@ -10,9 +11,11 @@ namespace Tests
         }
 
         [Test]
-        public void Test1()
+        public void FormatMessageTest()
         {
-            Assert.Pass();
+            Assert.AreEqual("HELLO", ServiceTool.FormatMessage("HELLO"));
+            Assert.AreEqual("HELLO", ServiceTool.FormatMessage("HELLO§"));
+            Assert.AreEqual("HELLO", ServiceTool.FormatMessage("HELLO!!!!"));
         }
     }
 }
