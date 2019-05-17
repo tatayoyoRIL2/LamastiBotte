@@ -6,3 +6,23 @@ Développement d'une application donnant l’impression d’un chat avec une IA.
 L’application apprendra de nouvelles réponses au fur à mesure des discussions. La base de
 questions/réponses devra être persistante, c’est à dire que la dernière session de questions/réponses
 doit pouvoir être rechargée à chaque démarrage de l’application.
+
+'''bash
+.
+└───LamastiBotte
+    ├───LamastiBotte.Core
+    │   ├───bin
+    │   │   └───Debug
+    │   ├───obj
+    │   │   └───Debug
+    │   │       └───TempPE
+    │   ├───Properties
+    │   └───Ressources
+    └───LamastiBotte.Core.Test
+        ├───bin
+        │   └───Debug
+        │       └───netcoreapp2.1
+        └───obj
+            └───Debug
+                └───netcoreapp2.1
+'''
