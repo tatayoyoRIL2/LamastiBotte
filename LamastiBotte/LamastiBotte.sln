@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LamastiBotte.Core", "LamastiBotte.Core\LamastiBotte.Core.csproj", "{1CEC857B-F7D4-4929-9154-CFFF03DE2E9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LamastiBotte.Core.Test", "LamastiBotte.Core.Test\LamastiBotte.Core.Test.csproj", "{4DF8C5FF-6922-463F-B685-D15E61529982}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LamastiBotte.Core.Test", "LamastiBotte.Core.Test\LamastiBotte.Core.Test.csproj", "{4DF8C5FF-6922-463F-B685-D15E61529982}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
