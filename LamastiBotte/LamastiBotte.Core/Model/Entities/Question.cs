@@ -19,11 +19,11 @@ namespace LamastiBotte.Core.Model.Entities
         /// <summary>
         /// String de la question
         /// </summary>
-        public string QuestionString { get; set; }
+        public string Message { get; set; }
 
         /// <summary>
         /// Liaison entre la question et réponse
         /// </summary>
-        public List<Reponse> reponses = new List<Reponse>();
+        public List<Reponse> Reponses { get; set; }
     }
 }
