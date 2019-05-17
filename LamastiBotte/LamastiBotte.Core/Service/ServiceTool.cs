@@ -10,7 +10,7 @@ namespace LamastiBotte.Core.Service
     {
         public string FormatMessage(string inputMessage)
         {
-
+            return inputMessage;
         }
     }
 }

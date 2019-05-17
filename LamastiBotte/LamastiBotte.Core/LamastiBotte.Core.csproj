@@ -67,7 +67,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\QuestionService.cs" />
+    <Compile Include="Service\ServiceTool.cs" />
     <Compile Include="Model\Entities\Question.cs" />
     <Compile Include="Model\Entities\Reponse.cs" />
     <Compile Include="Program.cs" />

@@ -10,6 +10,7 @@ namespace LamastiBotte.Core
     {
         public static void Main(string[] args)
         {
+            
         }
     }
 }
