@@ -13,9 +13,13 @@ namespace Tests
         [Test]
         public void FormatMessageTest()
         {
-            Assert.AreEqual("HELLO", ServiceTool.FormatMessage("HELLO"));
-            Assert.AreEqual("HELLO", ServiceTool.FormatMessage("HELLO§"));
-            Assert.AreEqual("HELLO", ServiceTool.FormatMessage("HELLO!!!!"));
+            Assert.AreEqual("hello", ServiceTool.FormatMessage("HELLO"));
+            Assert.AreEqual("hello", ServiceTool.FormatMessage("HELLO§"));
+            Assert.AreEqual("hello", ServiceTool.FormatMessage("HELLO!!!!"));
+            Assert.AreEqual("hello le monde", ServiceTool.FormatMessage("HELLO LE MONDE !!!!"));
+            Assert.AreEqual("hello le monde", ServiceTool.FormatMessage("   HELLO LE MONDE!!!!"));
+            Assert.AreEqual("hello le monde", ServiceTool.FormatMessage("   HELLO LE MONDE   !!!!"));
+            Assert.AreEqual("hello le monde", ServiceTool.FormatMessage("   HELLO LE MONDE   "));
         }
     }
 }

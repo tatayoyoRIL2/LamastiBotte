@@ -13,17 +13,45 @@ doit pouvoir être rechargée à chaque démarrage de l’application.
 └───LamastiBotte
     ├───LamastiBotte.Core
     │   ├───bin
-    │   │   └───Debug
+    │   │   ├───Debug
+    │   │   │   └───fr
+    │   │   └───Release
+    │   ├───Controller
+    │   ├───Model
+    │   │   └───Entities
     │   ├───obj
     │   │   └───Debug
     │   │       └───TempPE
     │   ├───Properties
-    │   └───Ressources
-    └───LamastiBotte.Core.Test
-        ├───bin
-        │   └───Debug
-        │       └───netcoreapp2.1
-        └───obj
-            └───Debug
-                └───netcoreapp2.1
+    │   ├───Ressources
+    │   ├───Service
+    │   └───Vue
+    ├───LamastiBotte.Core.Test
+    │   ├───bin
+    │   │   └───Debug
+    │   │       └───netcoreapp2.1
+    │   └───obj
+    │       └───Debug
+    │           └───netcoreapp2.1
+    ├───LamastiBotte.DataBase
+    │   ├───bin
+    │   │   └───Debug
+    │   └───obj
+    │       └───Debug
+    └───packages
+        ├───EntityFramework.6.2.0
+        │   ├───Content
+        │   │   └───net40
+        │   ├───lib
+        │   │   ├───net40
+        │   │   │   └───fr
+        │   │   └───net45
+        │   │       └───fr
+        │   └───tools
+        └───EntityFramework.fr.6.2.0
+            └───lib
+                ├───net40
+                │   └───fr
+                └───net45
+                    └───fr
 ```
