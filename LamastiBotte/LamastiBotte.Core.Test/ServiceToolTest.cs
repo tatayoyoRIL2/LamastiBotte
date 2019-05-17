@@ -2,7 +2,7 @@ using NUnit.Framework;
 
 namespace Tests
 {
-    public class Tests
+    public class ServiceToolTest
     {
         [SetUp]
         public void Setup()
