@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LamastiBotte.Core.Vue;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,9 @@ namespace LamastiBotte.Core
     {
         public static void Main(string[] args)
         {
-            
+            accueilVue vue = new accueilVue();
+            vue.ShowDialog();
+            vue.Dispose();
         }
     }
 }
