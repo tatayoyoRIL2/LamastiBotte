@@ -61,7 +61,7 @@
   <ItemGroup>
     <Build Include="Question.sql" />
     <Build Include="Reponse.sql" />
-    <Build Include="Message.sql" />
+    <Build Include="Conversation.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="LamastiBotte.DataBase.publish.xml" />
