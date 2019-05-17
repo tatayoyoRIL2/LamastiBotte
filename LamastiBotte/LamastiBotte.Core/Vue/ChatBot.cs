@@ -29,12 +29,25 @@ namespace LamastiBotte.Core.Vue
 
         private void tbConversation_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnEnvoiMessage_Click(object sender, EventArgs e)
         {
+            SendMessage();
+        }
 
+        private void SendMessage()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void tbMessage_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                SendMessage();
+            }
         }
     }
 }
