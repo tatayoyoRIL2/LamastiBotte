@@ -19,5 +19,5 @@ bld/
 
 # Fichier de configurtion utiliateur
 *.user
-/**/.jfm/
-/**/.dbmdl/
+/**/*.jfm
+/**/*.dbmdl
