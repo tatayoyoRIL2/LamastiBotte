@@ -2,3 +2,6 @@
 /.vs
 /bin/
 /obj/
+LamastiBotte/\.vs/
+
+LamastiBotte/LamastiBotte\.Core\.Test/obj/
