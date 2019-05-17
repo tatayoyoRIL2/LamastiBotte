@@ -1,11 +1,21 @@
-﻿/.vs/Lamasti_Botte/v15/Server/sqlite3
-/.vs
-/bin/
-/obj/
-LamastiBotte/\.vs/
+﻿# Ne pas prendre en compte les packages NuGet
+/packages/
 
-LamastiBotte/LamastiBotte\.Core/obj/
-LamastiBotte/LamastiBotte\.Core/bin/
+# Ne pas prendre en compte les dossiers temporaires de VisualStudio
+/**/.vs/
+/**/[Oo]bj/
 
-LamastiBotte/LamastiBotte\.Core\.Test/obj/
-LamastiBotte/LamastiBotte\.Core\.Test/bin/
+# Fichier de résulat de compilation
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+bld/
+**/[Bb]in/
+[Ll]og/
+/TestResults/
+
+# Fichier de configurtion utiliateur
+*.user
