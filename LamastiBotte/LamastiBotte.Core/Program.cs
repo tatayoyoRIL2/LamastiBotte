@@ -18,19 +18,18 @@ namespace LamastiBotte.Core
         /// </summary>
         public static void Main(string[] args)
         {
-            string strConnexion = "Data Source=localhost; Integrated Security=SSPI;"
-                        + "Initial Catalog=Northwind";
+            string strConnexion = "Data Source=localhost;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True";
             try
             {
+                // BDD : Connection à la BDD.
+                SqlConnection oConnection = new SqlConnection(strConnexion);
+                oConnection.Open();
+                Console.WriteLine("Etat de la connexion : " + oConnection.State);
+
                 // VUE : Appel de la vue.
                 accueilVue vue = new accueilVue();
                 vue.ShowDialog();
                 vue.Dispose();
-
-                // BDD : Connection à la BDD local.
-                SqlConnection oConnection = new SqlConnection(strConnexion);
-                oConnection.Open();
-                Console.WriteLine("Etat de la connexion : " + oConnection.State);
 
                 // BDD : Fermeture de la connection à la BDD.
                 oConnection.Close();
