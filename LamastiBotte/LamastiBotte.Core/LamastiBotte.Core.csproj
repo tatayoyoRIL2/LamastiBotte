@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\LogHelper.cs" />
+    <Compile Include="Service\DataBaseToolService.cs" />
     <Compile Include="Service\QuestionService.cs" />
     <Compile Include="Service\ServiceTool.cs" />
     <Compile Include="Model\Entities\Question.cs" />

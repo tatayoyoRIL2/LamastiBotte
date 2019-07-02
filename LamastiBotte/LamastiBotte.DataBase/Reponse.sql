@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[Reponse]
 (
-	[IdReponse] INT NOT NULL PRIMARY KEY,
-	[Message] NVARCHAR NOT NULL
+	[IdReponse] INT NOT NULL PRIMARY KEY IDENTITY,
+	[Message] NVARCHAR(MAX) NULL
 )

@@ -10,3 +10,19 @@
 --------------------------------------------------------------------------------------
 */
 
+USE [LamastiBotte]
+GO
+
+INSERT INTO [dbo].[Question]
+           ([Message])
+     VALUES
+           ('Je n`ai pas compris votre question.'),
+           ('Bonjour')
+
+GO
+
+
+INSERT INTO [dbo].[Reponse]
+           ([Message])
+     VALUES
+           ('Bonjour')

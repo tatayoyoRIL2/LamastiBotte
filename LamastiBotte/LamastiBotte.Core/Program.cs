@@ -1,11 +1,8 @@
-﻿using LamastiBotte.Core.Vue;
+﻿using LamastiBotte.Core.Service;
+using LamastiBotte.Core.Vue;
 using LamastiBotte.Core.Controller;
 using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LamastiBotte.Core
 {
@@ -19,7 +16,6 @@ namespace LamastiBotte.Core
         /// </summary>
         public static void Main(string[] args)
         {
-            string strConnexion = "Data Source=(localdb)\\MSSQLLocalDB;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True";
             try
             {
                 // BDD : Connection à la BDD.
@@ -41,6 +37,8 @@ namespace LamastiBotte.Core
             {
                 LogHelper.WriteLog(string.Format("L'erreur suivante a été rencontrée :" + e.Message), "ERROR");
             }
+            Console.ReadKey(true);
+
         }
     }
 }
