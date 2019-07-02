@@ -22,8 +22,6 @@ namespace LamastiBotte.Core
                 LogHelper.WriteLog("Lancement de la vue.", "INFO");
                 accueilVue vue = new accueilVue();
                 vue.ShowDialog();
-                vue.Dispose();
-
             }
             catch (Exception e)
             {

@@ -41,9 +41,10 @@ namespace LamastiBotte.Core.Vue
 
         private void SendMessage()
         {
-            string message = this.tbMessage.Text;
-            DataBaseToolService.UpdateBdd("");
-            LogHelper.WriteLog(message, "INFO");
+            string message = tbMessage.Text;
+            DataBaseToolService.UpdateBdd("INSERT INTO[dbo].[Question]([Message]) VALUES ('" + message + "')");
+
+            LogHelper.WriteLog(message + " inséré en BDD", "INFO");
         }
 
         private void tbMessage_KeyDown(object sender, KeyEventArgs e)

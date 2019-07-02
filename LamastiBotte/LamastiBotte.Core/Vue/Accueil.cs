@@ -54,6 +54,7 @@ namespace LamastiBotte.Core.Vue
 
         private void btnBegin_Click(object sender, EventArgs e)
         {
+            this.Dispose();
             chatBotVue chat = new chatBotVue();
             chat.ShowDialog();
         }
