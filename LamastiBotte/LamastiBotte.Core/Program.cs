@@ -1,4 +1,5 @@
 ﻿using LamastiBotte.Core.Vue;
+using LamastiBotte.Core.Controller;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -24,7 +25,7 @@ namespace LamastiBotte.Core
                 // BDD : Connection à la BDD.
                 SqlConnection oConnection = new SqlConnection(strConnexion);
                 oConnection.Open();
-                Console.WriteLine("Etat de la connexion : " + oConnection.State);
+                LogHelper.WriteLog(string.Format("Etat de la connexion : " + oConnection.State), "INFO");
 
                 // VUE : Appel de la vue.
                 accueilVue vue = new accueilVue();
@@ -36,7 +37,7 @@ namespace LamastiBotte.Core
             }
             catch (Exception e)
             {
-                Console.WriteLine("L'erreur suivante a été rencontrée :" + e.Message);
+                LogHelper.WriteLog(string.Format("L'erreur suivante a été rencontrée :" + e.Message), "ERROR");
             }
         }
     }
