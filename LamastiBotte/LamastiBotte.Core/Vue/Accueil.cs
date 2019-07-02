@@ -39,9 +39,9 @@ namespace LamastiBotte.Core.Vue
             }
             catch (System.IndexOutOfRangeException ex)
             {
-                LogHelper.WriteToFile(ex.Message, "Program");
-                Console.WriteLine("JE POSE MA GROSSE BITE LA COMME CA TU LA VERRAS BIEN");
-                Console.WriteLine(ex.Message);
+                LogHelper.WriteLog(ex.Message, "ERROR");
+                Console.WriteLine("JE POSE MA GROSSE BITE LA COMME CA TU LA VERRAS BIEN");               
+                LogHelper.WriteLog("UN LOG INFO DE QUALITE","INFO");
                 
             }
 
