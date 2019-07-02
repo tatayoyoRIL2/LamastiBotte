@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LamastiBotte.Core.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,7 +40,8 @@ namespace LamastiBotte.Core.Vue
 
         private void SendMessage()
         {
-            throw new NotImplementedException();
+            string message = this.tbMessage.Text;
+            LogHelper.WriteLog(message, "INFO");
         }
 
         private void tbMessage_KeyDown(object sender, KeyEventArgs e)
