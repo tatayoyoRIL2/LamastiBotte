@@ -1,4 +1,5 @@
 ﻿using LamastiBotte.Core.Controller;
+using LamastiBotte.Core.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,6 +42,7 @@ namespace LamastiBotte.Core.Vue
         private void SendMessage()
         {
             string message = this.tbMessage.Text;
+            DataBaseToolService.UpdateBdd("");
             LogHelper.WriteLog(message, "INFO");
         }
 
