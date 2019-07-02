@@ -28,9 +28,11 @@ namespace LamastiBotte.Core
                 LogHelper.WriteLog(string.Format("Etat de la connexion : " + oConnection.State), "INFO");
 
                 // VUE : Appel de la vue.
+                LogHelper.WriteLog("Lancement de la vue.", "INFO");
                 accueilVue vue = new accueilVue();
                 vue.ShowDialog();
                 vue.Dispose();
+
 
                 // BDD : Fermeture de la connection à la BDD.
                 oConnection.Close();
