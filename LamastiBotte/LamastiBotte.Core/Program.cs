@@ -22,9 +22,9 @@ namespace LamastiBotte.Core
             try
             {
                 // BDD : Connection à la BDD.
-                SqlConnection oConnection = new SqlConnection(strConnexion);
-                oConnection.Open();
-                Console.WriteLine("Etat de la connexion : " + oConnection.State);
+                //SqlConnection oConnection = new SqlConnection(strConnexion);
+                //oConnection.Open();
+                //Console.WriteLine("Etat de la connexion : " + oConnection.State);
 
                 // VUE : Appel de la vue.
                 accueilVue vue = new accueilVue();
@@ -32,7 +32,7 @@ namespace LamastiBotte.Core
                 vue.Dispose();
 
                 // BDD : Fermeture de la connection à la BDD.
-                oConnection.Close();
+                //oConnection.Close();
             }
             catch (Exception e)
             {
