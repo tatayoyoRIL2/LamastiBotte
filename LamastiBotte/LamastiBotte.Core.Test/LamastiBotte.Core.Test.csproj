@@ -16,4 +16,8 @@
     <ProjectReference Include="..\LamastiBotte.Core\LamastiBotte.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ServiceTest\" />
+  </ItemGroup>
+
 </Project>
