@@ -25,6 +25,10 @@ namespace LamastiBotte.Core.Service
             {
                 returnString = "Value NOT found into datas.";
             }
+            else if(question == "")
+            {
+                returnString = "Ta réponse est vide !";
+            }
             else
             {
                 questionsList.Add(question);

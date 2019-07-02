@@ -15,6 +15,8 @@ namespace LamastiBotte.Core.Test.ControllerTest
         {
             Assert.AreEqual("Je n'ai pas compris ta question !",
                 QuestionService.SendResponse("&8&8&9895656166656s6dqds16qsd&édazdazdza"));
+            Assert.AreEqual("Ta réponse est vide !",
+                QuestionService.SendResponse(""));
         }
     }
 }
