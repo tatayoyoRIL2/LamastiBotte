@@ -25,7 +25,7 @@ namespace LamastiBotte.Core
                 // BDD : Connection à la BDD.
                 SqlConnection oConnection = new SqlConnection(strConnexion);
                 oConnection.Open();
-                LogHelper.WriteLog(string.Format("Etat de la connexion : " + oConnection.State), "INFO");
+                LogHelper.WriteLog(string.Format("Etat de la connexion : '" + oConnection.State + "'."), "INFO");
 
                 // VUE : Appel de la vue.
                 LogHelper.WriteLog("Lancement de la vue.", "INFO");
