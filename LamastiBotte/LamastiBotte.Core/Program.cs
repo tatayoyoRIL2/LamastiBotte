@@ -18,13 +18,13 @@ namespace LamastiBotte.Core
         /// </summary>
         public static void Main(string[] args)
         {
-            string strConnexion = "Data Source=localhost;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True";
+            string strConnexion = "Data Source=(localdb)\\MSSQLLocalDB;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True";
             try
             {
                 // BDD : Connection à la BDD.
-                //SqlConnection oConnection = new SqlConnection(strConnexion);
-                //oConnection.Open();
-                //Console.WriteLine("Etat de la connexion : " + oConnection.State);
+                SqlConnection oConnection = new SqlConnection(strConnexion);
+                oConnection.Open();
+                Console.WriteLine("Etat de la connexion : " + oConnection.State);
 
                 // VUE : Appel de la vue.
                 accueilVue vue = new accueilVue();
@@ -32,7 +32,7 @@ namespace LamastiBotte.Core
                 vue.Dispose();
 
                 // BDD : Fermeture de la connection à la BDD.
-                //oConnection.Close();
+                oConnection.Close();
             }
             catch (Exception e)
             {
