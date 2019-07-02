@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LamastiBotte.Core.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,6 +30,20 @@ namespace LamastiBotte.Core.Vue
 
         private void logoBotte_Click(object sender, EventArgs e)
         {
+
+            //Gestion de l'exception
+            try
+            {
+                bool[] H = new bool[5] { true, false, true, false, true };
+                H[6] = false;
+            }
+            catch (System.IndexOutOfRangeException ex)
+            {
+                LogHelper.WriteToFile(ex.Message, "Program");
+                Console.WriteLine("JE POSE MA GROSSE BITE LA COMME CA TU LA VERRAS BIEN");
+                Console.WriteLine(ex.Message);
+                
+            }
 
         }
 
