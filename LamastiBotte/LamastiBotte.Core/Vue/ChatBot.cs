@@ -52,8 +52,6 @@ namespace LamastiBotte.Core.Vue
         private void btnEnvoiMessage_Click(object sender, EventArgs e)
         {
             SendMessage();
-            tbMessage.Clear();
-            
         }
 
         /// <summary>
@@ -63,6 +61,7 @@ namespace LamastiBotte.Core.Vue
         {
             string message = tbMessage.Text;
             InsertTextDialogue(message, Personnage.user);
+            tbMessage.Clear();
 
             var questionsData = this.getQuestions();
             var reponsesData = this.getReponses();
