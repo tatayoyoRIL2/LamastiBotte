@@ -54,6 +54,8 @@ namespace LamastiBotte.Core.Vue
         private void btnEnvoiMessage_Click(object sender, EventArgs e)
         {
             SendMessage();
+            tbMessage.Clear();
+            
         }
 
         /// <summary>
