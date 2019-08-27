@@ -12,13 +12,60 @@
 USE [LamastiBotte]
 GO
 
-DELETE FROM [dbo].[Reponse]
+DROP TABLE [dbo].[Message]
+DROP TABLE [dbo].[Reponse]
+DROP TABLE [dbo].[Question]
 GO
 
-DELETE FROM [dbo].[Question]
+
+SET ANSI_NULLS ON
 GO
 
-DELETE FROM [dbo].[Message]
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE TABLE [dbo].[Reponse](
+	[IdReponse] [int] IDENTITY(1,1) NOT NULL,
+	[Message] [nvarchar](max) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[IdReponse] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Question](
+	[IdQuestion] [int] IDENTITY(1,1) NOT NULL,
+	[Message] [nvarchar](max) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[IdQuestion] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Message](
+	[IdQuestionIdReponse] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[IdQuestionIdReponse] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Message]  WITH CHECK ADD  CONSTRAINT [FK_Conversation_Question] FOREIGN KEY([IdQuestionIdReponse])
+REFERENCES [dbo].[Question] ([IdQuestion])
+GO
+
+ALTER TABLE [dbo].[Message] CHECK CONSTRAINT [FK_Conversation_Question]
+GO
+
+ALTER TABLE [dbo].[Message]  WITH CHECK ADD  CONSTRAINT [FK_Conversation_Reponse] FOREIGN KEY([IdQuestionIdReponse])
+REFERENCES [dbo].[Reponse] ([IdReponse])
+GO
+
+ALTER TABLE [dbo].[Message] CHECK CONSTRAINT [FK_Conversation_Reponse]
 GO
 
 
