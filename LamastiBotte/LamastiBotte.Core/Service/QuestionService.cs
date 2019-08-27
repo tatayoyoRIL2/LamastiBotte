@@ -15,26 +15,20 @@ namespace LamastiBotte.Core.Service
         /// <summary>
         /// SendResponse pour la réponse utilisateur
         /// </summary>
-        public static string SendResponse(string question)
+        public static string SendResponse(string question, List<string> questionsList, List<string> reponseList)
         {
-            List<string> questionsList = new List<string>();
-            List<string> reponseList = new List<string>();
-
-            string returnString = "";
-            if (questionsList.Contains(question))
+            if(question == "")
             {
-                returnString = "Value NOT found into datas.";
+                return questionsList[1];
             }
-            else if(question == "")
+            else if (reponseList.Contains(question))
             {
-                returnString = "Ta réponse est vide !";
+                return questionsList[reponseList.FindIndex(a => a.Contains(question))];
             }
             else
             {
-                questionsList.Add(question);
-                returnString = "Je n'ai pas compris ta question !";
+                return questionsList[1];
             }
-            return returnString;
         }
     }
 }
