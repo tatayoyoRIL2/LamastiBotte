@@ -43,6 +43,8 @@ namespace LamastiBotte.Core.Vue
 
         private void tbConversation_TextChanged(object sender, EventArgs e)
         {
+            tbConversation.SelectionStart = tbConversation.Text.Length;
+            tbConversation.ScrollToCaret();
 
         }
 
