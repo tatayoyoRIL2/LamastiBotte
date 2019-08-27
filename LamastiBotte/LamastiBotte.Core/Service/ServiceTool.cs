@@ -12,6 +12,11 @@ namespace LamastiBotte.Core.Service
     /// </summary>
     public static class ServiceTool
     {
+        /// <summary>
+        /// Formate le message pour l'insérer en BDD.
+        /// </summary>
+        /// <param name="inputMessage">Message.</param>
+        /// <returns></returns>
         public static string FormatMessage(string inputMessage)
         {
             /// <summary>
@@ -34,6 +39,12 @@ namespace LamastiBotte.Core.Service
             return outputMessage;
         }
 
+
+        /// <summary>
+        /// Formate le message pour l'afficher à l'utilisateur.
+        /// </summary>
+        /// <param name="inputMessage">Message.</param>
+        /// <returns></returns>
         public static string FormatOutputMessage(string inputMessage)
         {
             string outputMessage = string.Format(inputMessage[0].ToString().ToUpper() + inputMessage.Substring(1).ToLower());

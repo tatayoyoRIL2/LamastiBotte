@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LamastiBotte.Core.Controller;
+using System;
 using System.Data.SqlClient;
 
 namespace LamastiBotte.Core.Service
@@ -15,7 +16,7 @@ namespace LamastiBotte.Core.Service
 
 
         /// <summary>
-        /// Exécute une requête de type GET.
+        /// Éxécute une requête de type GET.
         /// </summary>
         /// <param name="request">Requête à exécuter.</param>
         /// <returns>Objet de type SqlDataReader.</returns>
@@ -95,13 +96,13 @@ namespace LamastiBotte.Core.Service
                 {
                     //command.ExecuteNonQuery();
                     response = command.ExecuteNonQuery();
-                    Console.WriteLine("Command exécuté.");
+                    LogHelper.WriteLog("La requete a été exécuté", "INFO");
 
                     return response;
                 }
                 catch (SqlException eSql)
                 {
-                    Console.WriteLine("Erreur sql : " + eSql.Message);
+                    Console.WriteLine("Erreur SQL : " + eSql.Message);
                 }
                 catch
                 (Exception ex)
