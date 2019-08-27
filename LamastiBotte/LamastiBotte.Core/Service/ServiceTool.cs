@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Speech.Synthesis;
 
 namespace LamastiBotte.Core.Service
 {
@@ -52,5 +53,18 @@ namespace LamastiBotte.Core.Service
 
             return outputMessage;
         }
+
+        /// <summary>
+        /// synthétiser une voix
+        /// </summary>
+        /// <param name="inputMessage">Message.</param>
+        /// <returns></returns>
+        public static void SpeechSynthesizer(string inputMessage)
+        {
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+            synth.SetOutputToDefaultAudioDevice();
+            synth.Speak(inputMessage);
+        }
+
     }
 }

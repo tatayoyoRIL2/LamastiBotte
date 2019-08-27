@@ -11,19 +11,15 @@ namespace LamastiBotte.Core.Service
         /// <summary>
         /// SendResponse pour la réponse utilisateur
         /// </summary>
-        public static string SendResponse(string question, List<string> questionsList, List<string> reponseList)
+        public static string SendResponse(string userMessage, List<string> questionsList, List<string> reponseList)
         {
-            if (question == "")
+            if (reponseList.Contains(userMessage))
             {
-                return questionsList[1];
-            }
-            else if (reponseList.Contains(question))
-            {
-                return questionsList[reponseList.FindIndex(a => a.Contains(question))];
+                return questionsList[reponseList.FindIndex(a => a.Contains(userMessage))];
             }
             else
             {
-                return questionsList[1];
+                return questionsList[2];
             }
         }
     }
