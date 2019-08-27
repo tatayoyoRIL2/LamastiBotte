@@ -33,5 +33,13 @@ namespace LamastiBotte.Core.Service
 
             return outputMessage;
         }
+
+        public static string FormatOutputMessage(string inputMessage)
+        {
+            string outputMessage = string.Format(inputMessage[0].ToString().ToUpper() + inputMessage.Substring(1).ToLower());
+            outputMessage += '.';
+
+            return outputMessage;
+        }
     }
 }
