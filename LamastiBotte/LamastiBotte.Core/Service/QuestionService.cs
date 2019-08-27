@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace LamastiBotte.Core.Service
 {
@@ -17,7 +13,7 @@ namespace LamastiBotte.Core.Service
         /// </summary>
         public static string SendResponse(string question, List<string> questionsList, List<string> reponseList)
         {
-            if(question == "")
+            if (question == "")
             {
                 return questionsList[1];
             }

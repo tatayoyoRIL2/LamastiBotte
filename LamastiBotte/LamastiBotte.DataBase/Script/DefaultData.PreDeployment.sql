@@ -12,8 +12,19 @@
 USE [LamastiBotte]
 GO
 
+DELETE FROM [dbo].[Reponse]
+GO
+
+DELETE FROM [dbo].[Question]
+GO
+
+DELETE FROM [dbo].[Message]
+GO
+
+
 INSERT INTO [dbo].[Question]
            ([Message])
      VALUES
            ('bonjour'),
-		   ('je vous écoute')
+		   ('je vous écoute'),
+		   ('que voulez-vous dire ?')
