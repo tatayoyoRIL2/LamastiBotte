@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace LamastiBotte.Core.Service
 {
@@ -17,7 +13,11 @@ namespace LamastiBotte.Core.Service
         /// </summary>
         public static string SendResponse(string userMessage, List<string> questionsList, List<string> reponseList)
         {
-            if (reponseList.Contains(userMessage))
+            if(userMessage == "")
+            {
+                return questionsList[1];
+            }
+            else if (reponseList.Contains(userMessage))
             {
                 return questionsList[reponseList.FindIndex(a => a.Contains(userMessage))];
             }
