@@ -12,8 +12,8 @@ namespace LamastiBotte.Core.Test.ControllerTest
         [SetUp]
         public void Setup()
         {
-            questionsList = new List<string> { "bonjour", "je vous écoute" };
-            reponseList = new List<string> { "salut", "tu m'écoute" };
+            questionsList = new List<string> { "bonjour", "je vous écoute", "hey" };
+            reponseList = new List<string> { "salut", "tu m'écoute", "hey" };
         }
 
         [Test]
@@ -24,9 +24,9 @@ namespace LamastiBotte.Core.Test.ControllerTest
         }
 
         [Test]
-        public void SendResponseTestBadWord()
+        public void SendResponseTestNewSentense()
         {
-            Assert.AreEqual(questionsList[1],
+            Assert.AreEqual(questionsList[2],
                 QuestionService.SendResponse("$!yoann! aime !aller au wc456456654!!", questionsList, reponseList));
         }
 
