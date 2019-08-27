@@ -40,7 +40,7 @@ namespace LamastiBotte.Core.Vue
             catch (System.IndexOutOfRangeException ex)
             {
                 LogHelper.WriteLog(ex.Message, "ERROR");
-                Console.WriteLine("JE POSE MA GROSSE BITE LA COMME CA TU LA VERRAS BIEN");               
+                Console.WriteLine("CECI EST UN TEST POUR LES LOGS");               
                 LogHelper.WriteLog("UN LOG INFO DE QUALITE","INFO");
                 
             }
