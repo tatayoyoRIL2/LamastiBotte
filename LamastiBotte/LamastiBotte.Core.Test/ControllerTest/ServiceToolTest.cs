@@ -29,8 +29,6 @@ namespace Tests
             Assert.AreEqual("Tristan aime les fleurs.", ServiceTool.FormatOutputMessage("tristan aime les fleurs"));
             Assert.AreEqual("Coucou.", ServiceTool.FormatOutputMessage("coucou"));
             Assert.AreEqual("A.", ServiceTool.FormatOutputMessage("a"));
-            Assert.AreEqual("A.", ServiceTool.FormatOutputMessage("a"));
         }
-
     }
 }
