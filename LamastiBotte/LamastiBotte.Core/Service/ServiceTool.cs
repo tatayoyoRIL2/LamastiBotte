@@ -53,16 +53,16 @@ namespace LamastiBotte.Core.Service
         }
 
         /// <summary>
-        /// synthétiser une voix
+        /// Synthétise une voix
         /// </summary>
         /// <param name="inputMessage">Message.</param>
         /// <returns></returns>
-        public static void SpeechSynthesizer(string inputMessage)
-        {
-            SpeechSynthesizer synth = new SpeechSynthesizer();
-            synth.SetOutputToDefaultAudioDevice();
-            synth.Speak(inputMessage);
-        }
+        //public static void SpeechSynthesizer(string inputMessage)
+        //{
+        //    SpeechSynthesizer synth = new SpeechSynthesizer();
+        //    synth.SetOutputToDefaultAudioDevice();
+        //    synth.Speak(inputMessage);
+        //}
 
     }
 }
