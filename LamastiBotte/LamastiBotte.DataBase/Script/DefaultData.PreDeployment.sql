@@ -75,3 +75,10 @@ INSERT INTO [dbo].[Question]
            ('bonjour'),
 		   ('je vous écoute'),
 		   ('que voulez-vous dire ?')
+		   
+INSERT INTO [dbo].[Reponse]
+           ([Message])
+     VALUES
+           (''),
+		   (''),
+		   ('')
