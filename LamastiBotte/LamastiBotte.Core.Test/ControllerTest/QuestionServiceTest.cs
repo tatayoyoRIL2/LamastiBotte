@@ -27,13 +27,13 @@ namespace LamastiBotte.Core.Test.ControllerTest
         public void SendResponseTestNewSentense()
         {
             Assert.AreEqual(questionsList[2],
-                QuestionService.SendResponse("$!yoann! aime !aller au wc456456654!!", questionsList, reponseList));
+                QuestionService.SendResponse("$!yoann! aime !aller à l'utimate456456654!!", questionsList, reponseList));
         }
 
         [Test]
         public void SendResponseTestReponse()
         {
-            Assert.AreEqual(questionsList[0],
+            Assert.AreNotEqual(questionsList[0],
                 QuestionService.SendResponse(reponseList[0], questionsList, reponseList));
         }
     }
