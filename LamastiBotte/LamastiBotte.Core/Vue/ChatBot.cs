@@ -30,9 +30,11 @@ namespace LamastiBotte.Core.Vue
         /// </summary>
         private void chatBotVue_Load(object sender, EventArgs e)
         {
+            // On récupère les questions que le bot connaît déjà.
             SqlDataReader questions = DataBaseToolService.SendRequestGET("SELECT * FROM [LamastiBotte].[dbo].[Question]");
             LogHelper.WriteLog("Résulat de la requete GET : " + questions.ToString(), "INFO");
 
+            // On les lit et on les affiches
             int cpt = 0;
             while (questions.Read())
             {
@@ -44,11 +46,9 @@ namespace LamastiBotte.Core.Vue
             }
         }
 
-        private void tbMessage_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Gestion du comportement de la boite de dialogue lorsqu'on ajoute du texte.
+        /// </summary>
         private void tbConversation_TextChanged(object sender, EventArgs e)
         {
             tbConversation.SelectionStart = tbConversation.Text.Length;
@@ -69,19 +69,24 @@ namespace LamastiBotte.Core.Vue
         /// </summary>
         private void SendMessage()
         {
+            // Récupération du texte de l'utilisateur et insertion dans la boite de dialogue.
             string message = tbMessage.Text;
             InsertTextDialogue(message, Personnage.user);
             tbMessage.Clear();
 
+            // On fait parler le bot.
             ServiceTool.SpeechSynthesizer(message);
 
+            // Récupération des listes de questions et réponses connues.
             var questionsData = this.getQuestions();
             var reponsesData = this.getReponses();
+
+            // fonction qui nous renvoie la réponse du Lamastibot. Gestion de la réponse.
             var reponseIA = QuestionService.SendResponse(message, questionsData, reponsesData);
             InsertTextDialogue(reponseIA, Personnage.ia);
             ServiceTool.SpeechSynthesizer(reponseIA);
 
-
+            // Logique d'insertion de la donnée en BDD.
             if (reponseIA == questionsData[2])
             {
                 if (question)
@@ -165,6 +170,9 @@ namespace LamastiBotte.Core.Vue
         }
     }
 
+    /// <summary>
+    /// Énum qui permet de typer le type d'utilisateur.
+    /// </summary>
     public enum Personnage
     {
         user = 1,
