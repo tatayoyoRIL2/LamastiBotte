@@ -19,7 +19,6 @@ namespace LamastiBotte.Core.Service
             }
             else if (questionsList.Contains(userMessage))
             {
-                Console.WriteLine(" INDEX QUESTION : " + questionsList.FindIndex(a => a.Contains(userMessage)));
                 return reponseList[questionsList.FindIndex(a => a.Contains(userMessage))];
             }
             else

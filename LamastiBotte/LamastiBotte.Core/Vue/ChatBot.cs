@@ -73,10 +73,14 @@ namespace LamastiBotte.Core.Vue
             InsertTextDialogue(message, Personnage.user);
             tbMessage.Clear();
 
+            ServiceTool.SpeechSynthesizer(message);
+
             var questionsData = this.getQuestions();
             var reponsesData = this.getReponses();
             var reponseIA = QuestionService.SendResponse(message, questionsData, reponsesData);
             InsertTextDialogue(reponseIA, Personnage.ia);
+            ServiceTool.SpeechSynthesizer(reponseIA);
+
 
             if (reponseIA == questionsData[2])
             {
