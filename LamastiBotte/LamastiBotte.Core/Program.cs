@@ -25,7 +25,7 @@ namespace LamastiBotte.Core
             }
             catch (Exception e)
             {
-                LogHelper.WriteLog(string.Format("L'erreur suivante a été rencontrée :" + e.Message), "ERROR");
+                LogHelper.WriteLog(string.Format("L'erreur suivante a été rencontrée :" + e.Message + " " + e), "ERROR");
             }
             Console.ReadKey(true);
 

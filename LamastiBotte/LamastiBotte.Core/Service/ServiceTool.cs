@@ -43,10 +43,14 @@ namespace LamastiBotte.Core.Service
         /// <returns></returns>
         public static string FormatOutputMessage(string inputMessage)
         {
-            string outputMessage = string.Format(inputMessage[0].ToString().ToUpper() + inputMessage.Substring(1).ToLower());
-            outputMessage += '.';
+            if(inputMessage != null && inputMessage != "" && inputMessage != " ")
+            {
+                string outputMessage = string.Format(inputMessage[0].ToString().ToUpper() + inputMessage.Substring(1).ToLower());
+                outputMessage += '.';
 
-            return outputMessage;
+                return outputMessage;
+            }
+            return "";
         }
 
         /// <summary>

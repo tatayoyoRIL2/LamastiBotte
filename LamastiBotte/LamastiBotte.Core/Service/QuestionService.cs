@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace LamastiBotte.Core.Service
 {
@@ -7,19 +8,19 @@ namespace LamastiBotte.Core.Service
     /// </summary>
     public static class QuestionService
     {
-
         /// <summary>
         /// SendResponse pour la réponse utilisateur
         /// </summary>
         public static string SendResponse(string userMessage, List<string> questionsList, List<string> reponseList)
         {
-            if(userMessage == "")
+            if (userMessage == "" || userMessage == null)
             {
                 return questionsList[1];
             }
-            else if (reponseList.Contains(userMessage))
+            else if (questionsList.Contains(userMessage))
             {
-                return questionsList[reponseList.FindIndex(a => a.Contains(userMessage))];
+                Console.WriteLine(" INDEX QUESTION : " + questionsList.FindIndex(a => a.Contains(userMessage)));
+                return reponseList[questionsList.FindIndex(a => a.Contains(userMessage))];
             }
             else
             {

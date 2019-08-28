@@ -12,6 +12,14 @@ namespace LamastiBotte.Core.Vue
     /// </summary>
     public partial class chatBotVue : Form
     {
+        /// <summary>
+        /// Variable qui indique si c'est la première fois que l'utilisateur parle.
+        /// </summary>
+        private bool question = true;
+
+        /// <summary>
+        /// Constructeur qui initialise la vue.
+        /// </summary>
         public chatBotVue()
         {
             InitializeComponent();
@@ -70,8 +78,21 @@ namespace LamastiBotte.Core.Vue
             var reponseIA = QuestionService.SendResponse(message, questionsData, reponsesData);
             InsertTextDialogue(reponseIA, Personnage.ia);
 
-            int result = DataBaseToolService.UpdateBdd("INSERT INTO [LamastiBotte].[dbo].[Reponse]([Message]) VALUES ('" + message + "')");
-            LogHelper.WriteLog("Result request INSERT : " + result, "INFO");
+            if (reponseIA == questionsData[2])
+            {
+                if (question)
+                {
+                    int resultInsertQuestion = DataBaseToolService.UpdateBdd("INSERT INTO [LamastiBotte].[dbo].[Question]([Message]) VALUES ('" + message + "')");
+                    LogHelper.WriteLog("Result request INSERT : " + resultInsertQuestion, "INFO");
+                    question = false;
+                }
+                else
+                {
+                    int resultInsertReponse = DataBaseToolService.UpdateBdd("INSERT INTO [LamastiBotte].[dbo].[Reponse]([Message]) VALUES ('" + message + "')");
+                    LogHelper.WriteLog("Result request INSERT : " + resultInsertReponse, "INFO");
+                    question = true;
+                }
+            }
         }
 
         /// <summary>
@@ -101,16 +122,12 @@ namespace LamastiBotte.Core.Vue
         {
             List<string> listReponses = new List<string>() { };
 
-            SqlDataReader questions = DataBaseToolService.SendRequestGET("SELECT * FROM [LamastiBotte].[dbo].[Question]");
-            LogHelper.WriteLog("Résulat de la requete GET ALL questions :  " + questions.ToString(), "INFO");
+            SqlDataReader reponses = DataBaseToolService.SendRequestGET("SELECT * FROM [LamastiBotte].[dbo].[Reponse]");
+            LogHelper.WriteLog("Résulat de la requete GET ALL reponses :  " + reponses.ToString(), "INFO");
 
-            listReponses.Add("");
-            listReponses.Add("");
-            listReponses.Add("");
-
-            while (questions.Read())
+            while (reponses.Read())
             {
-                listReponses.Add(questions[1].ToString());
+                listReponses.Add(reponses[1].ToString());
             }
 
             return listReponses;
