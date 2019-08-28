@@ -46,6 +46,9 @@ namespace LamastiBotte.Core.Vue
             }
         }
 
+
+        private void tbMessage_TextChanged(object sender, EventArgs e) { }
+
         /// <summary>
         /// Gestion du comportement de la boite de dialogue lorsqu'on ajoute du texte.
         /// </summary>
