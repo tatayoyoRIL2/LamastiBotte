@@ -72,13 +72,27 @@ namespace LamastiBotte.Core.Vue
         /// Surveille la touche entrer et déclenche une action lorsqu'elle est utilisé.
         /// </summary>
         /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void tbMessage_KeyDown(object sender, KeyEventArgs e)
+        /// <param name="keyEvent"></param>
+        private void tbMessage_KeyDown(object sender, KeyEventArgs keyEvent)
         {
-            if (e.KeyCode == Keys.Enter)
+            try
             {
-                SendMessage();
+
+                if (keyEvent.KeyCode == Keys.Enter)
+                {
+                    SendMessage();
+                }
+                else if (keyEvent.KeyCode == Keys.F1)
+                {
+                    throw new Exception();
+                }
             }
+            catch (Exception e)
+            {
+                LogHelper.WriteLog(": Erreur généré" + e.StackTrace, "FATAL ERROR");
+                InsertTextDialogue("Une erreur est survenue. Veuillez réessayer plus tard.", Personnage.ia);
+            }
+
         }
 
 
