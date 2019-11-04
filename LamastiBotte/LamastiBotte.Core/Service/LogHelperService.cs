@@ -1,14 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LamastiBotte.Core.Controller
 {
-    class LogHelper
+    /// <summary>
+    /// Class utilitaire permettant de gérer les log.
+    /// </summary>
+    public class LogHelper
     {
+        /// <summary>
+        /// Permet de générer un log afficher dans la console et enregistrer dans un fichier.
+        /// Ce log est généré suivant sont type et un message transmit.
+        /// </summary>
+        /// <param name="errorMessage">Message définit</param>
+        /// <param name="className">Type du log</param>
         public static void WriteLog(string errorMessage, string className)
         {
             DateTime nowDate = DateTime.Now;
