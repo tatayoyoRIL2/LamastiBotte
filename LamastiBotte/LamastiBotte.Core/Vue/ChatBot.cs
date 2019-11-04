@@ -26,7 +26,7 @@ namespace LamastiBotte.Core.Vue
         }
 
         /// <summary>
-        /// Initialise la boite de dialogue du chat bot.
+        /// Initialise la boite de dialogue du lamasti bot.
         /// </summary>
         private void chatBotVue_Load(object sender, EventArgs e)
         {
@@ -60,12 +60,27 @@ namespace LamastiBotte.Core.Vue
         }
 
         /// <summary>
-        /// Surveille l'état du bouton "envoyer".
+        /// Surveille l'état du bouton "Envoyer".
         /// </summary>
         private void btnEnvoiMessage_Click(object sender, EventArgs e)
         {
             SendMessage();
         }
+
+
+        /// <summary>
+        /// Surveille la touche entrer et déclenche une action lorsqu'elle est utilisé.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tbMessage_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SendMessage();
+            }
+        }
+
 
         /// <summary>
         /// Gère la réponse de l'utilisateur.
@@ -145,19 +160,6 @@ namespace LamastiBotte.Core.Vue
             return listReponses;
         }
 
-
-        /// <summary>
-        /// Surveille la touche entrer etndéclenche une action lorsqu'elle est utilisé.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void tbMessage_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                SendMessage();
-            }
-        }
 
         /// <summary>
         /// Ajoute une nouvelle chaine de caractère dans la boite de dialogue.
