@@ -1,15 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LamastiBotte.Core.Service;
+using LamastiBotte.Core.Vue;
+using LamastiBotte.Core.Controller;
+using System;
+using System.Data.SqlClient;
 
 namespace LamastiBotte.Core
 {
-    class Program
+    /// <summary>
+    /// Point d'entrée de lancement de l'application.
+    /// </summary>
+    public class Program
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// Méthode principal.
+        /// </summary>
+        public static void Main(string[] args)
         {
+            try
+            {
+                // VUE : Appel de la vue.
+                LogHelper.WriteLog("Lancement de la vue.", "INFO");
+                accueilVue vue = new accueilVue();
+                vue.ShowDialog();
+            }
+            catch (Exception e)
+            {
+                LogHelper.WriteLog(string.Format("L'erreur suivante a été rencontrée :" + e.Message + " " + e), "ERROR");
+            }
+            Console.ReadKey(true);
+
         }
     }
 }
